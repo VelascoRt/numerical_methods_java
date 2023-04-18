@@ -26,7 +26,7 @@ public class Operaciones { /*Clase que realiza todas las operaciones */
                             p1 = sacarResultadoPrimero(a, min, c);
                             p2 = sacarResultadoPrimero(a, max, c);
                             z = max - ((p2 * (max - min)/(p2 - p1)));
-                            pz = sacarResultadoSegundo(z, b);
+                            pz = sacarResultadoPrimero(a, z, c);
                             break;
                         case 3: //case 3
                             break;
@@ -65,6 +65,25 @@ public class Operaciones { /*Clase que realiza todas las operaciones */
                             p2 = sacarResultadoTercero(max, b, c);
                             z = max - ((p2 * (max - min)/(p2 - p1)));
                             pz = sacarResultadoTercero(z, b, c);
+                            break;
+                        case 3: //case 3
+                            break;
+                        default:
+                            throw new AssertionError();
+                        }
+                        break; //Tercer break;
+                    case 4:
+                        switch (m) {
+                        case 1: //case 1
+                            p1 = sacarResultadoCuarto(min, b, c, a);
+                            z = (min + max) / 2;
+                            pz = sacarResultadoCuarto(z, b, c, a);
+                            break;
+                        case 2: //case 2
+                            p1 = sacarResultadoCuarto(min, b, c, a);
+                            p2 = sacarResultadoCuarto(max, b, c, a);
+                            z = max - ((p2 * (max - min)/(p2 - p1)));
+                            pz = sacarResultadoCuarto(z, b, c, a);
                             break;
                         case 3: //case 3
                             break;
@@ -122,6 +141,12 @@ public class Operaciones { /*Clase que realiza todas las operaciones */
     public static double sacarResultadoTercero (double x, double b, double c) {
         double resultado = 0;
         resultado = Math.pow(x,3) + (b*(Math.pow(x, 2))) + c;
+        
+        return resultado;
+    } //Version 1.01, Solo agregue un nuevo resultado Cuarto.
+    public static double sacarResultadoCuarto (double x, double b, double c, double a) {
+        double resultado = 0;
+        resultado = (a * Math.pow(x,2)) + (b*x) + c;
         
         return resultado;
     }

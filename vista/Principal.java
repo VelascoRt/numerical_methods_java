@@ -7,7 +7,7 @@ public class Principal {
     
     public static void main(String[] args) { /*Intefaz escrita */
         JOptionPane.showMessageDialog(null, "Escribe el tipo de ecuacion.");
-        int i = Integer.parseInt(JOptionPane.showInputDialog( "1. a/(b + c)\n2. e^a + b + c \n3. a^3 + b*a^2 + c"));
+        int i = Integer.parseInt(JOptionPane.showInputDialog( "1. a/(b + c)\n2. e^a + b + c \n3. a^3 + b*a^2 + c, \n4. ax2 + bx + c"));
         int m = Integer.parseInt(JOptionPane.showInputDialog("Inserte el metodo a realizar: \n1.Biseccion \n2.Falsa posicion"));
         double resultado = escribirEcuacion(i, m);
             
