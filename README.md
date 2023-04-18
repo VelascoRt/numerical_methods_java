@@ -9,6 +9,7 @@ Programa que podrá aceptar un algoritmo y sacar sus raices con los métodos nú
 
 --Cambios--
 1.0 Todo el trabajo que tenia en Apache esta ahora en Git.
+1.01 Se agrego solamente un nuevo tipo de ecuacion.
 
 --To do list--
 1. Formas de agregar algoritmos.
