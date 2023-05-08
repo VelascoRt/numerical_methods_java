@@ -16,7 +16,7 @@ public class Operaciones { /*Clase que realiza todas las operaciones */
         double error = 0;
         double given = 0;
         iteraciones = 0;
-        if ((fa1 * fb1 > 0) && (datos != 3) && (m != 5) && (datos !=4)) {
+        if ((fa1 * fb1 > 0) && (datos != 3) && (m != 5) && (datos !=4) && (m != 3)  && (m != 6) && (m != 4) ){
             JOptionPane.showMessageDialog(null, "No hay resultado");
         } else {
             switch (m) {
@@ -98,7 +98,6 @@ public class Operaciones { /*Clase que realiza todas las operaciones */
                     for (int j = 0; j < it; j++) {
                         fa1 = funcion(i, a, b, c, d, e, a1);
                         fb1 = funcion(i, a, b, c, d, e, b1);
-                        fbd = derivada(i, a, b, c, d, e, b1);
                         c1 = b1 - ((fb1 * (a1 - b1))/(fa1 - fb1));
                         error = Math.abs((c1 - b1)/c1)*100;
                         b1 = c1;
@@ -127,9 +126,22 @@ public class Operaciones { /*Clase que realiza todas las operaciones */
                             break;
                         }
                     }
+                case 6://Metodo punto fijo 
+                    for (int j = 0; j < 10; j++) {
+                        c1 = puntoFijo(i, a, b, c, d, e, b1);
+                        error = Math.abs((c1 - b1)/c1)*100;
+                        b1 = c1;
+                        fc = funcion(i, a, b, c, d, e, c1);
+                        resultado = c1;
+                        iteraciones++;
+                        if (given>error) {
+                            break;
+                        }
+                    }
+                    
                     break;
                 default:
-                    JOptionPane.showMessageDialog(null, "Escoge de 1 a 5.");
+                    JOptionPane.showMessageDialog(null, "Escoge de 1 a 6.");
                 
             }  /*Imprime el resultado */
             JOptionPane.showMessageDialog(null, "Numero de iteraciones " + iteraciones + ": " + resultado + " resultado: " + fc);
@@ -289,6 +301,58 @@ public class Operaciones { /*Clase que realiza todas las operaciones */
             default:
                 throw new AssertionError();
         }
+        return resultado;
+    }
+    
+    public static double puntoFijo(int i, double a, double b, double c, double d, double e, double x) {
+        double resultado = 0; //aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+        switch (i) {
+            case 1:
+                resultado = a + x;
+                break;
+            case 2:
+                resultado = Math.pow(Math.E,x) + b;
+                break;
+            case 3:
+                resultado = - Math.sqrt(((a * (Math.pow(x, 3)) + c)/b));
+                break;
+            case 4:
+                resultado = - ((a * Math.pow(x, 2) + c) / b);
+                break;
+            case 5:
+                resultado = - ((a * Math.pow(x, 3) + (b* Math.pow(x, 2)) + d) / c);
+                break;
+            case 6:
+                resultado = a * Math.sin((b * x) + c) + x;
+                break;
+            case 7:
+                resultado = (-a + x)/2;
+                break;
+            case 8:
+                resultado = Math.sqrt(- (b/a));
+                break;
+            case 9:
+                resultado = - Math.sqrt((a * Math.pow(x, 4) + c) / b);
+                break;
+            case 10:
+                resultado = ((a * Math.pow(x, 4)) + (b * Math.pow(x, 3)) + (c * Math.pow(x, 2)) + ((d * x)) + e);
+                break;
+            case 11: 
+                resultado = Math.pow(a, x) + b + x;
+                break;
+            case 12:
+                resultado = (Math.log10(a + b) / Math.log10(x)) + x;
+                break;
+            case 13:
+                resultado = Math.sqrt(x + a) + x;
+                break;
+            case 14:
+                resultado = ((x/(x+a)) + (b*x/(x+c))) + x;
+                break;
+            default:
+                throw new AssertionError();
+        }
+        
         return resultado;
     }
     

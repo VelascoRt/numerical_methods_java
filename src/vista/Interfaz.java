@@ -1,10 +1,16 @@
 
 package vista;
 
+import controlador.Funcion;
+import controlador.Metodo;
 import controlador.Operaciones;
 import java.awt.Color;
 import javax.swing.DefaultListModel;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.WindowConstants;
+import org.math.plot.Plot2DPanel;
+import  vista.Grafica2D;
 
 public class Interfaz extends javax.swing.JFrame {
 
@@ -13,6 +19,9 @@ public class Interfaz extends javax.swing.JFrame {
     DefaultListModel resultados = new DefaultListModel();
     public Interfaz() {
         initComponents();
+        /*
+        grafica.setBounds(280, 520, 350, 270);
+        add(grafica);*/
         resultados = new DefaultListModel();
         listResultados.setModel(resultados);
     }
@@ -40,6 +49,8 @@ public class Interfaz extends javax.swing.JFrame {
         txtd = new javax.swing.JTextField();
         txte = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        btnGraficar = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         listEc = new javax.swing.JList<>();
         jLabel3 = new javax.swing.JLabel();
@@ -53,13 +64,17 @@ public class Interfaz extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        txta = new javax.swing.JTextField();
+        txterror = new javax.swing.JTextField();
         txtb = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
         txtmin = new javax.swing.JTextField();
         txtmax = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        txta1 = new javax.swing.JTextField();
+        jLabel17 = new javax.swing.JLabel();
+        txtfuncion = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
@@ -75,7 +90,7 @@ public class Interfaz extends javax.swing.JFrame {
         listMetodo.setFont(new java.awt.Font("Ebrima", 0, 14)); // NOI18N
         listMetodo.setForeground(new java.awt.Color(255, 255, 255));
         listMetodo.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Bisección", "Falsa Posición", "Newton Raphson", "Método de la secante", "Método de raíces múltiples" };
+            String[] strings = { "Bisección", "Falsa Posición", "Newton Raphson", "Método de la secante", "Método de raíces múltiples", "Método de punto fijo" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
@@ -233,38 +248,66 @@ public class Interfaz extends javax.swing.JFrame {
         jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel15.setText("e");
 
+        jPanel3.setBackground(new java.awt.Color(51, 51, 51));
+
+        btnGraficar.setFont(new java.awt.Font("Ebrima", 0, 24)); // NOI18N
+        btnGraficar.setForeground(new java.awt.Color(255, 255, 255));
+        btnGraficar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnGraficar.setText("GRAFICAR");
+        btnGraficar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
+        btnGraficar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnGraficarMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(btnGraficar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(btnGraficar, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
+        );
+
         javax.swing.GroupLayout DownPanelLayout = new javax.swing.GroupLayout(DownPanel);
         DownPanel.setLayout(DownPanelLayout);
         DownPanelLayout.setHorizontalGroup(
             DownPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(DownPanelLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DownPanelLayout.createSequentialGroup()
                 .addGroup(DownPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(DownPanelLayout.createSequentialGroup()
-                        .addGap(332, 332, 332)
-                        .addComponent(cbxDatos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(64, 64, 64)
+                        .addGroup(DownPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(DownPanelLayout.createSequentialGroup()
+                                .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtd, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(DownPanelLayout.createSequentialGroup()
+                                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtc, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(DownPanelLayout.createSequentialGroup()
+                                .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txte, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(sldIteraciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(69, 69, 69))
                     .addGroup(DownPanelLayout.createSequentialGroup()
-                        .addGap(301, 301, 301)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(249, Short.MAX_VALUE))
-            .addGroup(DownPanelLayout.createSequentialGroup()
-                .addGap(64, 64, 64)
-                .addGroup(DownPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(DownPanelLayout.createSequentialGroup()
-                        .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtd, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(DownPanelLayout.createSequentialGroup()
-                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtc, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(DownPanelLayout.createSequentialGroup()
-                        .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txte, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(sldIteraciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(69, 69, 69)
-                .addComponent(Aceptar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(DownPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(DownPanelLayout.createSequentialGroup()
+                                .addGap(332, 332, 332)
+                                .addComponent(cbxDatos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(DownPanelLayout.createSequentialGroup()
+                                .addGap(301, 301, 301)
+                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)))
+                .addGroup(DownPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(Aceptar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(61, 61, 61))
         );
         DownPanelLayout.setVerticalGroup(
@@ -276,19 +319,24 @@ public class Interfaz extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DownPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(txtc, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel8)))
-                .addGap(9, 9, 9)
-                .addGroup(DownPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addGroup(DownPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txtd, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel14)))
-                .addGap(2, 2, 2)
-                .addGroup(DownPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cbxDatos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(DownPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txte, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel15)))
-                .addGap(0, 9, Short.MAX_VALUE))
+                .addGroup(DownPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(DownPanelLayout.createSequentialGroup()
+                        .addGap(9, 9, 9)
+                        .addGroup(DownPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(DownPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(txtd, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel14))
+                            .addComponent(jLabel2))
+                        .addGap(2, 2, 2)
+                        .addGroup(DownPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(DownPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(txte, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel15))
+                            .addComponent(cbxDatos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(DownPanelLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(28, 28, 28))
         );
 
         jPanel1.add(DownPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 310, 780, 140));
@@ -313,8 +361,8 @@ public class Interfaz extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Ebrima", 0, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Escoge la ecuación a utilizar:");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 40, -1, -1));
+        jLabel1.setText("Error:");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 470, -1, -1));
 
         jPanel2.setBackground(new java.awt.Color(51, 51, 51));
 
@@ -381,11 +429,12 @@ public class Interfaz extends javax.swing.JFrame {
         jLabel10.setText("b");
         jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 290, 30, -1));
 
-        txta.setBackground(new java.awt.Color(51, 51, 51));
-        txta.setFont(new java.awt.Font("Ebrima", 0, 14)); // NOI18N
-        txta.setForeground(new java.awt.Color(255, 255, 255));
-        txta.setText("0");
-        jPanel1.add(txta, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 250, 140, 30));
+        txterror.setEditable(false);
+        txterror.setBackground(new java.awt.Color(51, 51, 51));
+        txterror.setFont(new java.awt.Font("Ebrima", 0, 14)); // NOI18N
+        txterror.setForeground(new java.awt.Color(255, 255, 255));
+        txterror.setText("1e-6");
+        jPanel1.add(txterror, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 470, 130, 30));
 
         txtb.setBackground(new java.awt.Color(51, 51, 51));
         txtb.setFont(new java.awt.Font("Ebrima", 0, 14)); // NOI18N
@@ -428,6 +477,27 @@ public class Interfaz extends javax.swing.JFrame {
         jLabel11.setText("min");
         jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 450, 55, -1));
 
+        jLabel16.setFont(new java.awt.Font("Ebrima", 0, 14)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel16.setText("Escoge la ecuación a utilizar:");
+        jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 40, -1, -1));
+
+        txta1.setBackground(new java.awt.Color(51, 51, 51));
+        txta1.setFont(new java.awt.Font("Ebrima", 0, 14)); // NOI18N
+        txta1.setForeground(new java.awt.Color(255, 255, 255));
+        txta1.setText("0");
+        jPanel1.add(txta1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 250, 140, 30));
+
+        jLabel17.setFont(new java.awt.Font("Ebrima", 0, 14)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel17.setText("Escoge la función a utilizar:");
+        jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 440, -1, -1));
+
+        txtfuncion.setBackground(new java.awt.Color(51, 51, 51));
+        txtfuncion.setFont(new java.awt.Font("Ebrima", 0, 14)); // NOI18N
+        txtfuncion.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel1.add(txtfuncion, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 470, 250, 30));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -436,7 +506,7 @@ public class Interfaz extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 543, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 552, Short.MAX_VALUE)
         );
 
         pack();
@@ -487,7 +557,7 @@ public class Interfaz extends javax.swing.JFrame {
         int i = listEc.getSelectedIndex() + 1;
         int m = listMetodo.getSelectedIndex() + 1;
         int it = (Integer)sldIteraciones.getValue();
-        double a = Double.parseDouble(txta.getText());
+        double a = Double.parseDouble(txta1.getText());
         double b = Double.parseDouble(txtb.getText());
         double c = Double.parseDouble(txtc.getText());
         double d = Double.parseDouble(txtd.getText());
@@ -501,6 +571,14 @@ public class Interfaz extends javax.swing.JFrame {
         double resultado = 0;
         double temporal = 0;
         
+        
+        
+        
+        /*
+        grafica.addLegend("SOUTH");
+        grafica.removeAllPlots();
+        grafica.addLinePlot(def, x, y);
+        */
         try {
             switch (datos) {
                 
@@ -511,7 +589,7 @@ public class Interfaz extends javax.swing.JFrame {
                     nR++;
                     break;
                 case 2:
-                if((m == 3) && (m == 6)){
+                if((m == 3) || (m == 6) || (m == 5)){
                     resultado = controlador.Operaciones.metodoNumerico(0, min, a, b, c, d, e, i, m, it, datos);
                     resultados.add(nR, resultado);
                     nR++;
@@ -597,7 +675,7 @@ public class Interfaz extends javax.swing.JFrame {
                     resultados.add(nR, Math.abs(temp));
                     txtIteraciones.setText(String.valueOf(controlador.Operaciones.iteraciones));
                 case 5:
-                    if ((m == 3) && (m == 6)) {
+                    if ((m == 3) || (m == 6)) {
                         resultado = controlador.Operaciones.metodoNumerico(0, min, a, b, c, d, e, i, m, it, datos);
                         resultados.add(nR, resultado);
                         nR++;
@@ -634,9 +712,36 @@ public class Interfaz extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtbActionPerformed
 
+    private void btnGraficarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnGraficarMouseClicked
+        
+        double min = Double.parseDouble(txtmin.getText());
+        double max = Double.parseDouble(txtmax.getText());
+         
+        String def = txtfuncion.getText();
+        int it = (Integer)sldIteraciones.getValue();
+        double le = Double.parseDouble(txterror.getText());
+        Funcion ff = new Funcion(def);
+        Metodo s = new Metodo();
+        double r = s.raiz(ff, max, min, it, le);
+        resultados.add(nR, r);
+        nR++;
+        
+        double[] x = new double[400];
+        double[] y = new double[400];
+        double xi = max-10;
+        for (int j = 0; j < 400; j++) {
+            x[j] = xi + j*0.1;
+            y[j] = ff.evaluar(x[j]);
+        }
+        grafica2D.addLinePlot("Funciones",x, y);
+        JFrame frame = new JFrame("Grafica de funciones");
+        frame.setSize(500, 500);
+        frame.setContentPane(grafica2D);
+        frame.setVisible(true);
+    }//GEN-LAST:event_btnGraficarMouseClicked
+
  
     public static void main(String args[]) {
-        
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Interfaz().setVisible(true);
@@ -649,6 +754,7 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JPanel DownPanel;
     private javax.swing.JPanel Header;
     private javax.swing.JPanel Tools;
+    private javax.swing.JLabel btnGraficar;
     private javax.swing.JComboBox<String> cbxDatos;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -657,6 +763,8 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -667,6 +775,7 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
@@ -676,12 +785,15 @@ public class Interfaz extends javax.swing.JFrame {
     private javax.swing.JList<String> listResultados;
     private javax.swing.JSlider sldIteraciones;
     private javax.swing.JTextField txtIteraciones;
-    private javax.swing.JTextField txta;
+    private javax.swing.JTextField txta1;
     private javax.swing.JTextField txtb;
     private javax.swing.JTextField txtc;
     private javax.swing.JTextField txtd;
     private javax.swing.JTextField txte;
+    private javax.swing.JTextField txterror;
+    private javax.swing.JTextField txtfuncion;
     private javax.swing.JTextField txtmax;
     private javax.swing.JTextField txtmin;
     // End of variables declaration//GEN-END:variables
+Plot2DPanel grafica2D = new Plot2DPanel("SOUTH");
 }
