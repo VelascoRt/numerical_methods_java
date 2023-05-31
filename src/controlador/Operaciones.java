@@ -110,6 +110,7 @@ public class Operaciones { /*Clase que realiza todas las operaciones */
                     }
                     break;
                 case 5: //Método raíces múltiples.
+                    given = b1;
                     for (int j = 0; j < it; j++) {
                         fa1 = funcion(i, a, b, c, d, e, a1);
                         fb1 = funcion(i, a, b, c, d, e, b1);

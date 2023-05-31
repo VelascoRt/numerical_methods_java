@@ -38,43 +38,26 @@ public class Interfaz extends javax.swing.JFrame {
         lblExit = new javax.swing.JLabel();
         Header = new javax.swing.JPanel();
         DownPanel = new javax.swing.JPanel();
-        jLabel8 = new javax.swing.JLabel();
-        txtc = new javax.swing.JTextField();
-        Aceptar = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
         sldIteraciones = new javax.swing.JSlider();
-        jLabel2 = new javax.swing.JLabel();
-        cbxDatos = new javax.swing.JComboBox<>();
-        jLabel14 = new javax.swing.JLabel();
-        txtd = new javax.swing.JTextField();
-        txte = new javax.swing.JTextField();
-        jLabel15 = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
+        Graficar = new javax.swing.JPanel();
         btnGraficar = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        listEc = new javax.swing.JList<>();
-        jLabel3 = new javax.swing.JLabel();
+        txterror = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         listResultados = new javax.swing.JList<>();
         jLabel6 = new javax.swing.JLabel();
         txtIteraciones = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        txterror = new javax.swing.JTextField();
-        txtb = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
         txtmin = new javax.swing.JTextField();
         txtmax = new javax.swing.JTextField();
-        jLabel12 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
-        txta1 = new javax.swing.JTextField();
         jLabel17 = new javax.swing.JLabel();
         txtfuncion = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocationByPlatform(true);
@@ -168,46 +151,6 @@ public class Interfaz extends javax.swing.JFrame {
 
         DownPanel.setOpaque(false);
 
-        jLabel8.setFont(new java.awt.Font("Ebrima", 0, 24)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel8.setText("c");
-
-        txtc.setBackground(new java.awt.Color(51, 51, 51));
-        txtc.setFont(new java.awt.Font("Ebrima", 0, 14)); // NOI18N
-        txtc.setForeground(new java.awt.Color(255, 255, 255));
-        txtc.setText("0");
-
-        Aceptar.setBackground(java.awt.Color.darkGray);
-        Aceptar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255), 2));
-
-        jLabel4.setFont(new java.awt.Font("Ebrima", 0, 24)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("ACEPTAR");
-        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel4MouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jLabel4MouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                jLabel4MouseExited(evt);
-            }
-        });
-
-        javax.swing.GroupLayout AceptarLayout = new javax.swing.GroupLayout(Aceptar);
-        Aceptar.setLayout(AceptarLayout);
-        AceptarLayout.setHorizontalGroup(
-            AceptarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE)
-        );
-        AceptarLayout.setVerticalGroup(
-            AceptarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 46, Short.MAX_VALUE)
-        );
-
         sldIteraciones.setBackground(java.awt.Color.darkGray);
         sldIteraciones.setForeground(new java.awt.Color(255, 255, 255));
         sldIteraciones.setMajorTickSpacing(50);
@@ -218,37 +161,7 @@ public class Interfaz extends javax.swing.JFrame {
         sldIteraciones.setPaintTicks(true);
         sldIteraciones.setSnapToTicks(true);
 
-        jLabel2.setFont(new java.awt.Font("Ebrima", 0, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Número de resultados:");
-
-        cbxDatos.setBackground(new java.awt.Color(51, 51, 51));
-        cbxDatos.setFont(new java.awt.Font("Ebrima", 0, 14)); // NOI18N
-        cbxDatos.setForeground(new java.awt.Color(255, 255, 255));
-        cbxDatos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Un solo valor", "Cuadratica", "Cúbica", "Bicuadrada", "Seno, Coseno" }));
-
-        jLabel14.setFont(new java.awt.Font("Ebrima", 0, 24)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel14.setText("d");
-
-        txtd.setBackground(new java.awt.Color(51, 51, 51));
-        txtd.setFont(new java.awt.Font("Ebrima", 0, 14)); // NOI18N
-        txtd.setForeground(new java.awt.Color(255, 255, 255));
-        txtd.setText("0");
-
-        txte.setBackground(new java.awt.Color(51, 51, 51));
-        txte.setFont(new java.awt.Font("Ebrima", 0, 14)); // NOI18N
-        txte.setForeground(new java.awt.Color(255, 255, 255));
-        txte.setText("0");
-
-        jLabel15.setFont(new java.awt.Font("Ebrima", 0, 24)); // NOI18N
-        jLabel15.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel15.setText("e");
-
-        jPanel3.setBackground(new java.awt.Color(51, 51, 51));
+        Graficar.setBackground(new java.awt.Color(51, 51, 51));
 
         btnGraficar.setFont(new java.awt.Font("Ebrima", 0, 24)); // NOI18N
         btnGraficar.setForeground(new java.awt.Color(255, 255, 255));
@@ -259,110 +172,70 @@ public class Interfaz extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnGraficarMouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnGraficarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnGraficarMouseExited(evt);
+            }
         });
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(btnGraficar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        javax.swing.GroupLayout GraficarLayout = new javax.swing.GroupLayout(Graficar);
+        Graficar.setLayout(GraficarLayout);
+        GraficarLayout.setHorizontalGroup(
+            GraficarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(btnGraficar, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        GraficarLayout.setVerticalGroup(
+            GraficarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(btnGraficar, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
         );
+
+        txterror.setEditable(false);
+        txterror.setBackground(new java.awt.Color(51, 51, 51));
+        txterror.setFont(new java.awt.Font("Ebrima", 0, 14)); // NOI18N
+        txterror.setForeground(new java.awt.Color(255, 255, 255));
+        txterror.setText("1e-6");
+
+        jLabel1.setFont(new java.awt.Font("Ebrima", 0, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Error:");
 
         javax.swing.GroupLayout DownPanelLayout = new javax.swing.GroupLayout(DownPanel);
         DownPanel.setLayout(DownPanelLayout);
         DownPanelLayout.setHorizontalGroup(
             DownPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DownPanelLayout.createSequentialGroup()
-                .addGroup(DownPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(DownPanelLayout.createSequentialGroup()
-                        .addGap(64, 64, 64)
-                        .addGroup(DownPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(DownPanelLayout.createSequentialGroup()
-                                .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtd, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(DownPanelLayout.createSequentialGroup()
-                                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtc, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(DownPanelLayout.createSequentialGroup()
-                                .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txte, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(sldIteraciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(69, 69, 69))
-                    .addGroup(DownPanelLayout.createSequentialGroup()
-                        .addGroup(DownPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(DownPanelLayout.createSequentialGroup()
-                                .addGap(332, 332, 332)
-                                .addComponent(cbxDatos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(DownPanelLayout.createSequentialGroup()
-                                .addGap(301, 301, 301)
-                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)))
-                .addGroup(DownPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(Aceptar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(61, 61, 61))
+                .addContainerGap(73, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(17, 17, 17)
+                .addComponent(txterror, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(57, 57, 57)
+                .addComponent(sldIteraciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(70, 70, 70)
+                .addComponent(Graficar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(60, 60, 60))
         );
         DownPanelLayout.setVerticalGroup(
             DownPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(DownPanelLayout.createSequentialGroup()
                 .addGroup(DownPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Aceptar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(sldIteraciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, DownPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(txtc, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel8)))
-                .addGroup(DownPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(DownPanelLayout.createSequentialGroup()
-                        .addGap(9, 9, 9)
+                        .addGap(34, 34, 34)
                         .addGroup(DownPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(DownPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(txtd, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel14))
-                            .addComponent(jLabel2))
-                        .addGap(2, 2, 2)
-                        .addGroup(DownPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(DownPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(txte, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel15))
-                            .addComponent(cbxDatos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(DownPanelLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(28, 28, 28))
+                            .addComponent(jLabel1)
+                            .addComponent(txterror, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(Graficar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(105, 105, 105))
         );
 
-        jPanel1.add(DownPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 310, 780, 140));
-
-        listEc.setBackground(new java.awt.Color(51, 51, 51));
-        listEc.setFont(new java.awt.Font("Roboto Light", 0, 12)); // NOI18N
-        listEc.setForeground(new java.awt.Color(255, 255, 255));
-        listEc.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "a / (x+c)", "e^x + b - x", "x^3 + b*x^2 + c", "ax^2 + bx + c", "ax^3 + bx^2 + cx + d", "asen(x)", "x + a", "ax^2 + b", "ax^4 + bx^2 + c", "ax^4 + bx^3 + cx^2 + dx + e", "a^x + b", "logx (a + b)", "raiz(x + a)", "(ax^2 + bx + c)/dx", "(x/x-1) + (2x/x+1)" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        listEc.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
-        jScrollPane2.setViewportView(listEc);
-
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 70, 190, 120));
+        jPanel1.add(DownPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 310, 780, 100));
 
         jLabel3.setFont(new java.awt.Font("Ebrima", 0, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Escoge el método númerico a utilizar:");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 80, -1, -1));
-
-        jLabel1.setFont(new java.awt.Font("Ebrima", 0, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Error:");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 470, -1, -1));
 
         jPanel2.setBackground(new java.awt.Color(51, 51, 51));
 
@@ -411,42 +284,6 @@ public class Interfaz extends javax.swing.JFrame {
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 100, 140, 190));
 
-        jLabel7.setFont(new java.awt.Font("Ebrima", 0, 14)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setText("Escriba los valores a despejar:");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 210, 190, -1));
-
-        jLabel9.setFont(new java.awt.Font("Ebrima", 0, 24)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel9.setText("a");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 250, 30, -1));
-
-        jLabel10.setFont(new java.awt.Font("Ebrima", 0, 24)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel10.setText("b");
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 290, 30, -1));
-
-        txterror.setEditable(false);
-        txterror.setBackground(new java.awt.Color(51, 51, 51));
-        txterror.setFont(new java.awt.Font("Ebrima", 0, 14)); // NOI18N
-        txterror.setForeground(new java.awt.Color(255, 255, 255));
-        txterror.setText("1e-6");
-        jPanel1.add(txterror, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 470, 130, 30));
-
-        txtb.setBackground(new java.awt.Color(51, 51, 51));
-        txtb.setFont(new java.awt.Font("Ebrima", 0, 14)); // NOI18N
-        txtb.setForeground(new java.awt.Color(255, 255, 255));
-        txtb.setText("0");
-        txtb.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtbActionPerformed(evt);
-            }
-        });
-        jPanel1.add(txtb, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 290, 140, 30));
-
         jLabel13.setFont(new java.awt.Font("Ebrima", 0, 14)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
         jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -457,46 +294,41 @@ public class Interfaz extends javax.swing.JFrame {
         txtmin.setFont(new java.awt.Font("Ebrima", 0, 14)); // NOI18N
         txtmin.setForeground(new java.awt.Color(255, 255, 255));
         txtmin.setText("0");
-        jPanel1.add(txtmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 450, 140, 30));
+        jPanel1.add(txtmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 230, 140, 30));
 
         txtmax.setBackground(new java.awt.Color(51, 51, 51));
         txtmax.setFont(new java.awt.Font("Ebrima", 0, 14)); // NOI18N
         txtmax.setForeground(new java.awt.Color(255, 255, 255));
         txtmax.setText("0");
-        jPanel1.add(txtmax, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 490, 140, 30));
-
-        jLabel12.setFont(new java.awt.Font("Ebrima", 0, 24)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel12.setText("max");
-        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 490, 55, -1));
+        jPanel1.add(txtmax, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 270, 140, 30));
 
         jLabel11.setFont(new java.awt.Font("Ebrima", 0, 24)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(255, 255, 255));
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel11.setText("min");
-        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 450, 55, -1));
-
-        jLabel16.setFont(new java.awt.Font("Ebrima", 0, 14)); // NOI18N
-        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel16.setText("Escoge la ecuación a utilizar:");
-        jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 40, -1, -1));
-
-        txta1.setBackground(new java.awt.Color(51, 51, 51));
-        txta1.setFont(new java.awt.Font("Ebrima", 0, 14)); // NOI18N
-        txta1.setForeground(new java.awt.Color(255, 255, 255));
-        txta1.setText("0");
-        jPanel1.add(txta1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 250, 140, 30));
+        jPanel1.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 230, 55, -1));
 
         jLabel17.setFont(new java.awt.Font("Ebrima", 0, 14)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(255, 255, 255));
         jLabel17.setText("Escoge la función a utilizar:");
-        jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 440, -1, -1));
+        jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 90, -1, -1));
 
         txtfuncion.setBackground(new java.awt.Color(51, 51, 51));
         txtfuncion.setFont(new java.awt.Font("Ebrima", 0, 14)); // NOI18N
         txtfuncion.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.add(txtfuncion, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 470, 250, 30));
+        jPanel1.add(txtfuncion, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 250, 30));
+
+        jLabel7.setFont(new java.awt.Font("Ebrima", 0, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel7.setText("Escriba los valores a despejar:");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 200, 190, -1));
+
+        jLabel14.setFont(new java.awt.Font("Ebrima", 0, 24)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel14.setText("max");
+        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 270, 55, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -506,7 +338,7 @@ public class Interfaz extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 552, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -543,202 +375,51 @@ public class Interfaz extends javax.swing.JFrame {
         listMetodo.setSelectionBackground(Color.GRAY);
     }//GEN-LAST:event_listMetodoMouseExited
 
-    private void jLabel4MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseEntered
-       Aceptar.setBackground(Color.GRAY);
-    }//GEN-LAST:event_jLabel4MouseEntered
-
-    private void jLabel4MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseExited
-        Aceptar.setBackground(Color.darkGray);
-    }//GEN-LAST:event_jLabel4MouseExited
-
-    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
-        resultados.removeAllElements();
-        nR = 0;
-        int i = listEc.getSelectedIndex() + 1;
-        int m = listMetodo.getSelectedIndex() + 1;
-        int it = (Integer)sldIteraciones.getValue();
-        double a = Double.parseDouble(txta1.getText());
-        double b = Double.parseDouble(txtb.getText());
-        double c = Double.parseDouble(txtc.getText());
-        double d = Double.parseDouble(txtd.getText());
-        double e = Double.parseDouble(txte.getText());
-        double min = Double.parseDouble(txtmin.getText());
-        double max = Double.parseDouble(txtmax.getText());
-        int datos = cbxDatos.getSelectedIndex() + 1;
-        int mt = 0;
-        double temp = 0;
-        
-        double resultado = 0;
-        double temporal = 0;
-        
-        
-        
-        
-        /*
-        grafica.addLegend("SOUTH");
-        grafica.removeAllPlots();
-        grafica.addLinePlot(def, x, y);
-        */
-        try {
-            switch (datos) {
-                
-                case 1:
-                    resultado = controlador.Operaciones.metodoNumerico(min, max, a, b, c, d, e, i, m, it, datos);
-                    resultados.add(nR, resultado);
-                    txtIteraciones.setText(String.valueOf(controlador.Operaciones.iteraciones));
-                    nR++;
-                    break;
-                case 2:
-                if((m == 3) || (m == 6) || (m == 5)){
-                    resultado = controlador.Operaciones.metodoNumerico(0, min, a, b, c, d, e, i, m, it, datos);
-                    resultados.add(nR, resultado);
-                    nR++;
-                    temporal = resultado;
-                    resultado = controlador.Operaciones.metodoNumerico(0, max, a, b, c, d, e, i, m, it, datos);
-                    resultados.add(nR, resultado);
-                    txtIteraciones.setText(String.valueOf(controlador.Operaciones.iteraciones));
-                    nR++;
-                } else {
-                    resultado = controlador.Operaciones.metodoNumerico(min, 0, a, b, c, d, e, i, m, it, datos);
-                    resultados.add(nR, resultado);
-                    nR++;
-                    resultado = controlador.Operaciones.metodoNumerico(0, max, a, b, c, d, e, i, m, it, datos);
-                    resultados.add(nR, resultado);
-                    txtIteraciones.setText(String.valueOf(controlador.Operaciones.iteraciones));
-                    nR++;
-                    txtIteraciones.setText(String.valueOf(controlador.Operaciones.iteraciones));
-                }
-                    break;
-                case 3:
-                    mt = m;
-                    resultado = controlador.Operaciones.metodoNumerico(min, 0, a, b, c, d, e, i, m, it, datos);
-                    resultados.add(nR, resultado);
-                    nR++;
-                    temp = resultado;
-                    
-                    while (nR ==1) {    
-                        resultado = controlador.Operaciones.metodoNumerico(min, temp, a, b, c, d, e, i, m, it, datos);
-                        if (resultado != temp) {
-                            resultados.add(nR, resultado);
-                            nR++;
-                        }
-                        resultado = controlador.Operaciones.metodoNumerico(temp, 0, a, b, c, d, e, i, m, it, datos);
-                        if (resultado != temp) {
-                            resultados.add(nR, resultado);
-                            nR++;
-                        }
-                        m = 1;
-                    }
-                    
-                    m = mt;
-                    resultado = controlador.Operaciones.metodoNumerico(0, max, a, b, c, d, e, i, m, it, datos);
-                    resultados.add(nR, resultado);
-                    nR++;
-                    temp = resultado;
-                    
-                    while (nR == 2) {    
-                        resultado = controlador.Operaciones.metodoNumerico(0, temp, a, b, c, d, e, i, m, it, datos);
-                        if (resultado != temp) {
-                            resultados.add(nR, resultado);
-                            nR++;
-                        }
-                        resultado = controlador.Operaciones.metodoNumerico(temp,  max, a, b, c, d, e, i, m, it, datos);
-                        if (resultado != temp) {
-                            resultados.add(nR, resultado);
-                            nR++;
-                        }
-                        m = 1;
-                    }
-                    
-                    txtIteraciones.setText(String.valueOf(controlador.Operaciones.iteraciones));
-                    break;
-                case 4:
-                    resultado = controlador.Operaciones.metodoNumerico(min, 0, a, b, c, d, e, i, m, it, datos);
-                    resultados.add(nR, resultado);
-                    nR++;
-                    temp = resultado;
-                    
-                    while (nR ==1) {    
-                        resultado = controlador.Operaciones.metodoNumerico(min, temp, a, b, c, d, e, i, m, it, datos);
-                        if (resultado != temp) {
-                            resultados.add(nR, resultado);
-                            nR++;
-                        }
-                        resultado = controlador.Operaciones.metodoNumerico(temp, 0, a, b, c, d, e, i, m, it, datos);
-                        if (resultado != temp) {
-                            resultados.add(nR, resultado);
-                            nR++;
-                        }
-                    }
-                    resultados.add(nR, Math.abs(resultado));
-                    nR++;
-                    resultados.add(nR, Math.abs(temp));
-                    txtIteraciones.setText(String.valueOf(controlador.Operaciones.iteraciones));
-                case 5:
-                    if ((m == 3) || (m == 6)) {
-                        resultado = controlador.Operaciones.metodoNumerico(0, min, a, b, c, d, e, i, m, it, datos);
-                        resultados.add(nR, resultado);
-                        nR++;
-                        temporal = resultado;
-                        resultado = controlador.Operaciones.metodoNumerico(0, max, a, b, c, d, e, i, m, it, datos);
-                        resultados.add(nR, resultado);
-                        txtIteraciones.setText(String.valueOf(controlador.Operaciones.iteraciones));
-                        nR++;
-                    } else {
-                        resultado = controlador.Operaciones.metodoNumerico(min, 0, a, b, c, d, e, i, m, it, datos);
-                        resultados.add(nR, resultado);
-                        nR++;
-                        resultado = controlador.Operaciones.metodoNumerico(0, max, a, b, c, d, e, i, m, it, datos);
-                        resultados.add(nR, resultado);
-                        txtIteraciones.setText(String.valueOf(controlador.Operaciones.iteraciones));
-                        nR++;
-                    }
-                    double continuo = Math.abs((0-temporal)) + Math.abs(0-resultado);
-                    resultados.add(nR, continuo);
-                    txtIteraciones.setText(String.valueOf(controlador.Operaciones.iteraciones));
-                    break;
-                default:
-                    throw new AssertionError();
-            }
-        } catch (Exception E) {
-            JOptionPane.showMessageDialog(null, "Error", "Error de Insercion de datos", JOptionPane.ERROR_MESSAGE);
-        }
-        
-        
-        
-    }//GEN-LAST:event_jLabel4MouseClicked
-
-    private void txtbActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtbActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtbActionPerformed
-
     private void btnGraficarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnGraficarMouseClicked
         
+        //VALORES
+        resultados.removeAllElements();
+        nR = 0;
+        int m = listMetodo.getSelectedIndex() + 1;
+        int it = (Integer)sldIteraciones.getValue();
         double min = Double.parseDouble(txtmin.getText());
         double max = Double.parseDouble(txtmax.getText());
          
+        //CONTENIDO DE LA ECUACION
         String def = txtfuncion.getText();
-        int it = (Integer)sldIteraciones.getValue();
         double le = Double.parseDouble(txterror.getText());
         Funcion ff = new Funcion(def);
         Metodo s = new Metodo();
-        double r = s.raiz(ff, max, min, it, le);
+        
+        //FUNCION RESULTADO.
+        double r = s.metodoSecante(ff, max, min, it, le);
         resultados.add(nR, r);
         nR++;
         
-        double[] x = new double[400];
-        double[] y = new double[400];
+        //PROCESO DE LA OPERACION
+        double[] x = new double[it];
+        double[] y = new double[it];
         double xi = max-10;
-        for (int j = 0; j < 400; j++) {
+        for (int j = 0; j < it; j++) {
             x[j] = xi + j*0.1;
             y[j] = ff.evaluar(x[j]);
         }
+        
+        //FRAME PARA LA GRAFICA
         grafica2D.addLinePlot("Funciones",x, y);
         JFrame frame = new JFrame("Grafica de funciones");
         frame.setSize(500, 500);
         frame.setContentPane(grafica2D);
         frame.setVisible(true);
     }//GEN-LAST:event_btnGraficarMouseClicked
+
+    private void btnGraficarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnGraficarMouseEntered
+        Graficar.setBackground(Color.GRAY);
+    }//GEN-LAST:event_btnGraficarMouseEntered
+
+    private void btnGraficarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnGraficarMouseExited
+        Graficar.setBackground(Color.darkGray);
+    }//GEN-LAST:event_btnGraficarMouseExited
 
  
     public static void main(String args[]) {
@@ -750,46 +431,29 @@ public class Interfaz extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel Aceptar;
     private javax.swing.JPanel DownPanel;
+    private javax.swing.JPanel Graficar;
     private javax.swing.JPanel Header;
     private javax.swing.JPanel Tools;
     private javax.swing.JLabel btnGraficar;
-    private javax.swing.JComboBox<String> cbxDatos;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JLabel lblExit;
-    private javax.swing.JList<String> listEc;
     private javax.swing.JList<String> listMetodo;
     private javax.swing.JList<String> listResultados;
     private javax.swing.JSlider sldIteraciones;
     private javax.swing.JTextField txtIteraciones;
-    private javax.swing.JTextField txta1;
-    private javax.swing.JTextField txtb;
-    private javax.swing.JTextField txtc;
-    private javax.swing.JTextField txtd;
-    private javax.swing.JTextField txte;
     private javax.swing.JTextField txterror;
     private javax.swing.JTextField txtfuncion;
     private javax.swing.JTextField txtmax;
