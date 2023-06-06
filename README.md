@@ -18,6 +18,8 @@ Programa que podrá aceptar un algoritmo y sacar sus raices con los métodos nú
 
 3.0 Ahora mismo el programa funciona de manera estable, tiene algunos errores al momento de intentar cuadráticas, cúbicas o hasta bicuadráticas, pero el programa en general funciona bien, hasta el momento cuenta con catorce ecuaciones, cada una con su derivada y su segunda derivada, las cuales son usadas por Método Newton-Raphson, y el Método Raíces Múltiples,
 
+4.0 Todo el codigo cambio a uno con mathplot, y con JED, esta es una de las versiones estables.
+
+5.0 El trabajo ha acabado, se acabo la interfaz y todos los metodos funcionan, funciona con cualquier metodo y con cualquier ecuacion.
+
 --To do list--
-1. Agregar logaritmos.
-2. Arreglar algunos errores con el método de devolver múltiples valores.
