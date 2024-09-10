@@ -1,5 +1,5 @@
 # Numerical methods using Java
-Programa que podrá aceptar un algoritmo y sacar sus raices con los métodos númericos
+Java app that accepts an algorithm and returns when y equals to zero using numerical methods 
 
 --changelog--
 - 5.0 The app is now finished.
